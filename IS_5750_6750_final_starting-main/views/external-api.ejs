@@ -1,0 +1,59 @@
+<h1><span>Current weather api</span></h1>
+<ul class="gallery"></ul>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>External API</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
+    }
+
+    .weather-info, .api-info {
+      text-align: center;
+      max-width: 800px; 
+      width: 100%;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background: #f8f8f8;
+      border-radius: 8px;
+    }
+
+    .api-info {
+      margin-top: 20px;
+    }
+
+    .api-info p:first-child {
+      font-style: italic;
+    }
+
+    .api-description {
+      text-align: justify;
+      text-justify: inter-word;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="weather-info">
+    <h2>Current Weather in Logan, Utah</h2>
+    <p>Temperature: <%= weatherData.temp %> °C</p>
+    <p>Description: <%= weatherData.weather.description %></p>
+    <p>Wind Speed: <%= weatherData.wind_spd %> m/s</p>
+    <p>Humidity: <%= weatherData.rh %>%</p>
+    <hr>
+  </div>
+
+  <div class="api-info">
+    <p><em>This data is fetched from the <a href="https://www.weatherbit.io/api" target="_blank">Weatherbit API</a>.</em></p>
+    <p class="api-description">Weatherbit's platform provides current weather information tailored to specific locations. This seamless integration offers the most recent updates on conditions such as temperature, humidity, and wind speeds, along with thorough descriptions. The system is also equipped to handle detailed forecast requests, serving as a valuable resource for planning around weather-sensitive activities. Here, we see how the service retrieves the latest weather for Logan, Utah.</p>
+  </div>
+</body>
+</html>

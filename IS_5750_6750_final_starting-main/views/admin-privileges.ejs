@@ -1,0 +1,38 @@
+<h1><span>Favorite Styles</span></h1>
+
+<form action="/users/admin-privileges" method="POST">
+  <div class="user-list">
+    <% users.forEach((user, index) => { %>
+      <div class="user-item">
+        <label>
+          <input type="checkbox" 
+                 name="users[<%= index %>][admin]" 
+                 <%= user.admin ? 'checked' : '' %> /> <%= user.firstName %> <%= user.lastName %> (<%= user.email %>)
+        </label>
+        <input type="hidden" name="users[<%= index %>][id]" value="<%= user._id %>" />
+      </div>
+    <% }) %>
+  </div>
+
+  <button type="submit" class="update-button">Update Admin Privileges</button>
+</form>
+
+<style>
+  .user-list {
+    margin-top: 20px;
+  }
+
+  .user-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .update-button {
+    background-color: #007bff; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  } 
+</style>

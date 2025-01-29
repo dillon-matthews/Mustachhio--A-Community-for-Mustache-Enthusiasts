@@ -1,0 +1,15 @@
+<div id="body">
+  <h1><span>Blog Single Post</span></h1>
+  <div>
+    <img src="/<%= blog.imageURL %>" alt="<%= capitalizeTitle(blog.title) %>" />
+    <div class="article">
+      <h2><%= capitalizeTitle(blog.title) %></h2>
+      <% blog.content.split('\n').forEach(paragraph => { %>
+      <p><%= paragraph %></p>
+      <% }) %>
+    </div>
+  </div>
+</div>
+
+<% function capitalizeTitle(title) { return title.replace(/\b\w/g,
+function(match) { return match.toUpperCase(); }); } %>
